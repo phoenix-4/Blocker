@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-width: 1px;
+
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        span {
+            font-size: 12px;
+            vertical-align: top;
+            margin: 0;
+        }
+        p ,div{
+            text-align: center;
+            margin: 5;
+            font-size: 12px;
+        }
+        /*th > img {*/
+        /*width: 25px;*/
+        /*height: 25px;*/
+        /*}*/
+        td{
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<table width="100%">
+
+    <tr>
+        <th colspan="2" style="text-align: center; padding: 15px; font-family: 'Times New Roman'">CERTIFICATE OF REGISTRATION OF MOTOR VEHICLE</th>
+    </tr>
+    <tr>
+        <td><b>01. Registration No :</b> <p>$vehicle.registrationNo</p></td>
+        <td><b>02. Chassis No :</b> <p>$vehicle.chassisNo</p></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>03. Current Owner/ Address/ NIC :</b> <p>$vehicle.currentOwner.getOwner() <br/>$vehicle.currentOwner.getAddress() <br/> $vehicle.currentOwner.getNic()</p></td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>04. Condition/ Special Notes :</b> <p>$vehicle.condition</p></td>
+    </tr>
+    <tr>
+        <td><b>05. Engine No :</b> <p>$vehicle.engineNo</p></td>
+        <td><b>06. Cylinder Capacity(cc) :</b> <p>$vehicle.cylinderCapacity cc</p></td>
+    </tr>
+    <tr>
+        <td><b>07. Class of Vehicle :</b> <p>$vehicle.classOfVehicle</p></td>
+        <td><b>08. Taxation Class :</b> <p>$vehicle.taxationClass</p></td>
+    </tr>
+    <tr>
+        <td><b>09. Status When Registered :</b> <p>$vehicle.statusWhenRegistered</p></td>
+        <td><b>10. Fuel Type :</b> <p>$vehicle.fuelType</p></td>
+    </tr>
+    <tr>
+        <td><b>11. Make :</b> <p>$vehicle.make</p></td>
+        <td><b>12. Country of Origin :</b>  <p>$vehicle.countryOfOrigin</p></td>
+    </tr>
+    <tr>
+        <td><b>13. Model :</b> <p>$vehicle.model</p></td>
+        <td><b>14. Manufactures Description :</b> <p>$vehicle.manufacturesDescription</p></td>
+    </tr>
+    <tr>
+        <td><b>15. Wheel Base :</b> <p>$vehicle.wheelBase mm</p></td>
+        <td><b>16. Over Hang :</b> <p>$vehicle.overHang</p></td>
+    </tr>
+    <tr>
+        <td><b>17. Type of Body :</b> <p>$vehicle.typeOfBody</p></td>
+        <td><b>18. Year of Manufacture :</b> <p>$vehicle.yearOfManufacture</p></td>
+    </tr>
+    <tr>
+        <td><b>19. Colour :</b> <p>$vehicle.colour</p></td>
+        <td><b>20. Seating Capacity :</b> <p>$vehicle.seatingCapacity</p></td>
+    </tr>
+    <tr>
+        <td><b>21. Weight :</b> <p>$vehicle.weight kg</p></td>
+        <td><b>22. Provincial Council :</b> <p>$vehicle.provincialCouncil</p></td>
+    </tr>
+    <tr>
+        <td><b>23. Tyre Size :</b> <br/> <pre>     </pre><b>Front :</b> <p>$vehicle.frontTyreSize</p> <br/> <pre>     </pre><b>Rear :</b> <p>$vehicle.rearTyreSize</p></td>
+        <td><b>24. Length :</b> <p>$vehicle.length mm</p> <br/> <pre>     </pre><b>Width :</b> <p>$vehicle.width mm</p> <br/> <pre>     </pre><b>Height :</b> <p>$vehicle.height mm</p></td>
+    </tr>
+    <tr>
+        <td><b>25. Date of First Registration :</b> <p>$vehicle.dateOfFirstRegistration</p></td>
+        <td><b>26. Date of issue :</b> <p>$vehicle.dateOfIssue</p></td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: top"><b>27. Previous Owners :</b>
+            #foreach( $owner in $vehicle.previousOwners )
+                <p>$owner.getOwner() <br/> $owner.getAddress() <br/> $owner.getNic()</p>
+            #end
+        </td>
+        <td><p><img src="$qrCode" style="width:175px;height:175px;"/></p></td>
+    </tr>
+    <tr>
+        <td><b>28. Commissioner of Motor Traffic :</b> <br/><br/><br/><br/></td>
+    </tr>
+</table>
+
+
+
+##    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width:104px;height:142px;"/>
+
+</body>
+</html>

@@ -24,15 +24,6 @@ public class FirebaseInitialize {
     public void initialize() {
 
         try {
-//            FileInputStream serviceAccount =
-//                    new FileInputStream("./serviceAccount.json");
-//
-//            FirebaseOptions options = new FirebaseOptions.Builder()
-//                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-//                    .setDatabaseUrl("https://fir-demo-8920f.firebaseio.com")
-//                    .build();
-//
-//            FirebaseApp.initializeApp(options);
 
             FileInputStream serviceAccount =
                     new FileInputStream("./serviceAccount.json");

@@ -52,7 +52,7 @@ public class VehicleFirebaseService {
             System.out.println(vehicle.getCurrentOwner().getOwner());
             return vehicle;
         } else {
-            System.out.println("No such document!");
+            System.out.println("No such vehicle!");
             return null;
         }
     }

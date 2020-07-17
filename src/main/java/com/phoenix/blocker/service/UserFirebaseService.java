@@ -40,7 +40,7 @@ public class UserFirebaseService {
             System.out.println(user);
             return user;
         } else {
-            System.out.println("No such document!");
+            System.out.println("No such user!");
             return null;
         }
     }

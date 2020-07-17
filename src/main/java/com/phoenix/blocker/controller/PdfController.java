@@ -38,13 +38,10 @@ public class PdfController {
     QRGenatorService qrGenatorService;
 
     @PostMapping("/genpdf")
-    HttpEntity<byte[]> generatePdf(@RequestBody Vehicle vehicle) throws IOException, WriterException {
+    HttpEntity<byte[]> generatePdf(@RequestBody Vehicle vehicle) {
 
-
-
-
+        System.out.println("Generating PDF.....");
         return pdfService.createPdf(vehicle);
-
 
     }
 

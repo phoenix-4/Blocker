@@ -29,11 +29,8 @@ public class VehicleController {
 
     @PutMapping("/updateVehicle")
     public String updateVehicle(@RequestBody Vehicle vehicle) {
+        System.out.println("Updating Vehicle.....");
         return vehicleFirebaseService.updateVehicle(vehicle);
     }
 
-//    @DeleteMapping("/deleteUser")
-//    public String deleteUser(@RequestHeader String name) throws InterruptedException, ExecutionException {
-//        return firebaseServices.deleteUser(name);
-//    }
 }

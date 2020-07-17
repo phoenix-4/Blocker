@@ -18,14 +18,13 @@ public class GenController {
 	@Autowired
 	QRGenatorService qrGenatorService;
 
-
-
+	//For the  testing....
 	@GetMapping("/user")
 	@PreAuthorize("hasRole('USER')")
 	public String forUser() {
-		System.out.println("sfdsvfdbcv");
+		System.out.println("testing...");
 
-			qrGenatorService.generateQRCodeImage("This is my first QR Code", 350, 350);
+			qrGenatorService.generateQRCodeImage("Transaction Hash", 350, 350);
 
 		return "welcome user";
 	}

@@ -54,21 +54,6 @@ public class AuthController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) throws ExecutionException, InterruptedException {
-//		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-//			return new ResponseEntity(new ApiResponse(false, "Username is already taken!"), HttpStatus.BAD_REQUEST);
-//		}
-
-//		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-//			return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"), HttpStatus.BAD_REQUEST);
-//		}
-
-//		Firestore db = FirestoreClient.getFirestore();
-//		ApiFuture<QuerySnapshot> future = db.collection("users").get();
-//		// future.get() blocks on response
-//		List<QueryDocumentSnapshot> documents = future.get().getDocuments();
-//		for (QueryDocumentSnapshot document : documents) {
-//			System.out.println(document.getId() + " => " + document.toObject(User.class));
-//		}
 
 		// Creating user's account
 		User user = new User(signUpRequest.getName(), signUpRequest.getUsername(), signUpRequest.getEmail(),
@@ -76,14 +61,10 @@ public class AuthController {
 
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-//		Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
-//				.orElseThrow(() -> new AppException("User Role not set."));
-
-//		user.setRoles(Collections.singleton(userRole));
 		user.setRole("ROLE_USER");
 
 		User result;
-//		result = userRepository.save(user);
+
 		result = userFirebaseService.saveUserWithCollectionId(user.getUserName(),user);
 
 		URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users/{username}")
